@@ -19,9 +19,9 @@ const App = () => {
 
   const analyzeComments = async () => {
     try {
-      const commentsRes = await axios.post("http://localhost:5000/fetch-comments", { videoUrl });
+      const commentsRes = await axios.post("https://youtube-comment-analyzer-49cl.onrender.com/fetch-comments", { videoUrl });
       console.log(commentsRes);
-      const analysisRes = await axios.post("http://localhost:5000/analyze-comments", commentsRes.data);
+      const analysisRes = await axios.post("https://youtube-comment-analyzer-49cl.onrender.com/analyze-comments", commentsRes.data);
       setData(analysisRes.data);
     } catch (error) {
       console.error(error);
